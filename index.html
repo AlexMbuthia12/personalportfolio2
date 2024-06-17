@@ -6,8 +6,8 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>personal portfolio</title>
 </head>
-<body>
-    <div id="main">
+<body> 
+    <div id="header">
        <div class="navbar-container">
          <nav>
             <img src="./images/logo.png" class="logo">
@@ -20,6 +20,97 @@
           </ul>
         </nav>
       </div>
+      <div class="header-text">
+        <p>Front end developer</p>
+        <h1>Hi, I'm <span>Mbuthia Kagiri</span> a 
+          <br/>Software Developer </h1>
+      </div>
     </div>
+
+    <!-- -----------------  About  ------------------ */ -->
+   <div id="about">
+      <div class="container">
+          <div class="row">
+               <div class="about-col-1">
+                  <img src="./images/alex-two.jpg">
+               </div>
+               <div class="about-col-2">
+                   <h1 class="sub-title">About Me</h1>
+                   <P>As an ambitious  Business Information Technology graduate from KCA University, I possess a fervent interest in software development, computer networks, and system administration.</P>
+                  <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                  </div>
+
+                  <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                      <li><span>UI/UX</span><br>Designing  Web/App interfaces</li>
+                      <li><span>Web Development</span><br>Web App Development</li>
+                      <li><span>App Development</span><br>Designing  Web/App interfaces</li>
+                    </ul>
+                  </div>
+
+                  <div class="tab-contents" id="experience">
+                    <ul>
+                      <li><span>2023</span><br>Web Development</li>
+                      <li><span>2022</span><br>miramar international Limited</li>
+                    </ul>
+                  </div>
+
+                  <div class="tab-contents" id="education">
+                    <ul>
+                      <li><span>2024</span><br>Institute of Software Development</li>
+                      <li><span>2018-2023</span><br>Kca University</li>
+                      <li><span>2014-2017</span><br>Moi High Mbiruri</li>
+                    </ul>
+                  </div>
+                  
+               </div>
+            </div>
+      </div>
+   </div>
+
+   <!--     --------------- Services ---------------- -->
+
+   <div id="services">
+    <div class="container-services">
+      <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+          <div>
+           <h2>Web Design</h2>
+           <p>As a dedicated and creative web designer, I specialize in crafting visually stunning and highly functional websites that provide an exceptional user experience.</p>
+           <a href="#">Learn More</a>
+          </div>
+          <div>
+            <h2>CCTV Instalation</h2>
+            <p>As an experienced CCTV installation expert, I specialize in designing, installing, and maintaining advanced surveillance systems.</p>
+            <a href="#">Learn More</a>
+           </div>
+           <div>
+            <h2>Photographer/Videographer</h2>
+            <p>Photography: Expertise in portrait, event, and landscape photography, utilizing advanced techniques and equipment for high-quality images.
+            Videography: Proficient in shooting and editing videos, including corporate, promotional, and event videography.</p>
+            <a href="#">Learn More</a>
+           </div>
+        </div>
+    </div>
+   </div>
+
+   <script>
+      var tablinks = document.getElemenyByClassName("tab-links");
+      var tabcontents = document.getElemenyByClassName("tab-contents");
+
+      function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link"); 
+        document.getElementById(tabname).classList.add("active-tab");
+      }
+   </script>
 </body>
 </html>
