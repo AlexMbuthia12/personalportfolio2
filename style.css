@@ -69,6 +69,7 @@ nav ul li a:hover::after {
 #about {
     padding: 40px 10px 40px;
     color: #ababab;
+    background: #080808;
 
 }
 .row {
@@ -93,7 +94,7 @@ nav ul li a:hover::after {
     color: #df6a6a
 }
 .about-col-2 p {
-    color: #080808;
+    color: #ebe5e5;
 }
 .tab-titles {
     display: flex;
@@ -121,7 +122,7 @@ nav ul li a:hover::after {
 }
 
 .tab-contents ul li {
-    /* color: #080808; */
+    color: #b1adad;
     list-style: none;
     margin: 10px 0;
 }
@@ -142,7 +143,8 @@ nav ul li a:hover::after {
 
 /* -------------------------------Services--------------------------------------------------*/
 #services {
-    /* padding:0; */
+    padding:30px 0;
+    background-color: #080808;
 }
 .services-list {
     display: grid;
@@ -151,7 +153,47 @@ nav ul li a:hover::after {
     margin-top: 50px;
 }
 .container-services {
-    padding: 0px 20px;
+    padding: 0px 30px;
+}
+.services-list div{
+    background: #262626;
+    padding: 40px;
+    /* height: 300px; */
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background-color 0.5s, transform 0.5s;
+}
+.services-list div i {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+.services-list div h2 {
+    font-size: 24px;
+    font-weight: 450;
+    margin-bottom: 15px;
+}
+.services-list div a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.services-list div:hover {
+    background-color: #df356b;
+    transform: translateY(-10px);
 }
 
+/*------------------ Portfolio ------------------*/
+
+#portfolio {
+    padding: 40px 0;
+}
+.work-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
 

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>personal portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body> 
     <div id="header">
@@ -78,16 +79,19 @@
       <h1 class="sub-title">My Services</h1>
         <div class="services-list">
           <div>
+           <i class="fa-solid fa-code"></i>
            <h2>Web Design</h2>
            <p>As a dedicated and creative web designer, I specialize in crafting visually stunning and highly functional websites that provide an exceptional user experience.</p>
            <a href="#">Learn More</a>
           </div>
           <div>
+            <i class="fa-solid fa-camera-cctv"></i>
             <h2>CCTV Instalation</h2>
             <p>As an experienced CCTV installation expert, I specialize in designing, installing, and maintaining advanced surveillance systems.</p>
             <a href="#">Learn More</a>
            </div>
            <div>
+            <i class="fa-solid fa-camera"></i>
             <h2>Photographer/Videographer</h2>
             <p>Photography: Expertise in portrait, event, and landscape photography, utilizing advanced techniques and equipment for high-quality images.
             Videography: Proficient in shooting and editing videos, including corporate, promotional, and event videography.</p>
@@ -96,6 +100,27 @@
         </div>
     </div>
    </div>
+
+   <!-------------------Portfolio----------------->
+
+   <div id="portfolio">
+     <div class="container">
+        <h1 class="sub-title">My Work</h1>
+      <div class="work-list">
+          <div class="work">
+             <img src="/images/ToDoList.jpeg" alt="">
+          </div>
+
+          <div class="work">
+            <img src="/images/CalculatorApp.jpeg" alt="">
+         </div>
+
+         <div class="work">
+          <img src="/images/PrimePics.jpeg" alt="">
+         </div>
+      </div>
+   </div>
+  </div>
 
    <script>
       var tablinks = document.getElemenyByClassName("tab-links");
