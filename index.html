@@ -152,35 +152,23 @@
         <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
         <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
       </div>
-      <button class="download-cv">Download CV</button>
+      <!-- <button class="download-cv" href="/images/Alex-Resume.pdf" download >Download CV</button> -->
+      <button class="download-cv" onclick="downloadCV()">Download CV</button>
     </div>
     <div class="contact-form">
       <form>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name"><br><br>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email"><br><br>
-        <label for="message">Message:</label>
-        <textarea id="message" name="message"></textarea><br><br>
-        <button class="submit-btn">Send Message</button>
+        <!-- <label for="name">Name:</label> -->
+        <input type="text" id="name" name="name" placeholder="your Name" required><br><br>
+        <!-- <label for="email">Email:</label> -->
+        <input type="email" id="email" name="email" placeholder="Your Email" required><br><br>
+        <!-- <label for="message">Message:</label> -->
+        <textarea id="message" name="message" rows="6" placeholder="Your Message"></textarea><br><br>
+        <button type="submit" class="submit-btn" >Send Message</button>
       </form>
     </div>
   </div>
-
-   <script>
-      var tablinks = document.getElemenyByClassName("tab-links");
-      var tabcontents = document.getElemenyByClassName("tab-contents");
-
-      function opentab(tabname){
-        for(tablink of tablinks){
-            tablink.classList.remove("active-link");
-        }
-        for(tabcontent of tabcontents){
-            tabcontent.classList.remove("active-tab");
-        }
-        event.currentTarget.classList.add("active-link"); 
-        document.getElementById(tabname).classList.add("active-tab");
-      }
-   </script>
+<div>
+  <script src="web.js"></script>
+</div>
 </body>
 </html>

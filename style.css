@@ -308,40 +308,61 @@ nav ul li a:hover::after {
     color: #999;
   }
   .download-cv {
-    background-color: #ff3e9e;
+    background-color: #ff004f;
     color: #fff;
     border: none;
-    padding: 10px 20px;
-    font-size: 16px;
+    border-radius: 15px;
+    /* padding: 10px 20px; */
+    font-size: 11px;
+    width: 50%;
+    height: 10%;
     cursor: pointer;
   }
   .download-cv:hover {
     background-color: #ff7ab4;
   }
+  /* -------------------------contact -------------------------------- */
   .contact-form {
     flex-basis: 60%;
-    padding: 20px;
-  }
-  .contact-form label {
-    display: block;
-    margin-bottom: 10px;
-  }
-  .contact-form input, .contact-form textarea {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
+    padding: 35px 10px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .contact-form form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contact-form input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #11b848;
+    background-color: #999;
+    color: #070707;
   }
   .contact-form textarea {
-    height: 100px;
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #11b848;
+    background-color: #999;
+    color: #0a0a0a;
+  }
+  .contact-form textarea {
+    height: 70px;
   }
   
   .submit-btn {
-    background-color: #ff69b4;
+    background-color: #ff004f;
     color: #fff;
     border: none;
-    padding: 10px 20px;
-    font-size: 16px;
+    border-radius: 15px;
+    font-size: 11px;
+    width: 90px;
+    height: 30px;
     cursor: pointer;
   }
   
