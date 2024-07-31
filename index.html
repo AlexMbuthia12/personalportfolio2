@@ -10,16 +10,18 @@
 <body> 
     <div id="header">
        <div class="navbar-container">
-         <nav>
-            <img src="./images/logo.png" class="logo">
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Contact</a></li>    
+        <nav>
+          <img src="./images/logo.png" class="logo">
+          <ul id="sidemenu">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contacts">Contact</a></li>
+            <i class="fas fa-times" onclick="closemenu()" id="close-icon"></i>
           </ul>
-        </nav>
+          <i class="fas fa-bars" onclick="openmenu()"></i>
+        </nav> 
       </div>
       <div class="header-text">
         <p>Front end developer</p>
@@ -29,49 +31,33 @@
     </div>
 
     <!-- ---------------------------------------------  About  ----------------------------------------------- */ -->
-   <div id="about">
+    <div id="about">
       <div class="container">
-          <div class="row">
-               <div class="about-col-1">
-                  <img src="./images/alex-two.jpg">
-               </div>
-               <div class="about-col-2">
-                   <h1 class="sub-title">About Me</h1>
-                   <P>As an ambitious  Business Information Technology graduate from KCA University, I possess a fervent interest in software development, computer networks, and system administration.</P>
-                  <div class="tab-titles">
-                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                    <p class="tab-links" onclick="opentab('education')">Education</p>
-                  </div>
-
-                  <div class="tab-contents active-tab" id="skills">
-                    <ul>
-                      <li><span>UI/UX</span><br>Designing  Web/App interfaces</li>
-                      <li><span>Web Development</span><br>Web App Development</li>
-                      <li><span>App Development</span><br>Designing  Web/App interfaces</li>
-                    </ul>
-                  </div>
-
-                  <div class="tab-contents" id="experience">
-                    <ul>
-                      <li><span>2023</span><br>Web Development</li>
-                      <li><span>2022</span><br>miramar international Limited</li>
-                    </ul>
-                  </div>
-
-                  <div class="tab-contents" id="education">
-                    <ul>
-                      <li><span>2024</span><br>Institute of Software Development</li>
-                      <li><span>2018-2023</span><br>Kca University</li>
-                      <li><span>2014-2017</span><br>Moi High Mbiruri</li>
-                    </ul>
-                  </div>
-                  
-               </div>
+        <div class="row">
+          <div class="about-col-1">
+            <img src="./images/alex-two.jpg">
+          </div>
+          <div class="about-col-2">
+            <h1 class="sub-title">About Me</h1>
+            <p>As an ambitious Business Information Technology graduate from KCA University, I possess a fervent interest in software development, computer networks, and system administration.</p>
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="opentab(event, 'skills')">Skills</p>
+              <p class="tab-links" onclick="opentab(event, 'experience')">Experience</p>
+              <p class="tab-links" onclick="opentab(event, 'education')">Education</p>
             </div>
+            <div class="tab-contents active-tab" id="tab-content">
+              <ul id="skills-list">
+                <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
+                <li><span>Web Development</span><br>Web App Development</li>
+                <li><span>App Development</span><br>Designing Web/App interfaces</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
-   </div>
-
+    </div>
+  
+  
    <!--     ----------------------------------------------- Services -------------------------------------- -->
 
    <div id="services">
@@ -139,6 +125,7 @@
 
    <!------------------------------ id contact me-------------------------------------------------------->
 
+   <div id="contacts">
    <div class="parent-contact">
     <div class="contact-info">
       <h2>Contact me</h2>
@@ -156,17 +143,23 @@
       <button class="download-cv" onclick="downloadCV()">Download CV</button>
     </div>
     <div class="contact-form">
-      <form>
+      <form name="submit-to-google-sheet">
         <!-- <label for="name">Name:</label> -->
-        <input type="text" id="name" name="name" placeholder="your Name" required><br><br>
+        <input type="text" id="name" name="Name" placeholder="Your Name" required><br><br>
         <!-- <label for="email">Email:</label> -->
-        <input type="email" id="email" name="email" placeholder="Your Email" required><br><br>
+        <input type="email" id="email" name="Email" placeholder="Your Email" required><br><br>
         <!-- <label for="message">Message:</label> -->
-        <textarea id="message" name="message" rows="6" placeholder="Your Message"></textarea><br><br>
+        <textarea id="message" name="Message" rows="6" placeholder="Your Message"></textarea><br><br>
         <button type="submit" class="submit-btn" >Send Message</button>
+        <span id="msg"></span>
       </form>
+      
     </div>
   </div>
+  <div class="copyright">
+    <P>copyright @ Alex. Made with <i class="fas fa-heart"></i> by Alex Kagiri Mbuthia. </P>
+  </div>
+</div>
 <div>
   <script src="web.js"></script>
 </div>
