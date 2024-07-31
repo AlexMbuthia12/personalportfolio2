@@ -23,7 +23,7 @@ HTML {
     width: 200px;
 }
 .navbar-container {
-    padding: 10px 8%;
+    padding: 10px 6%;
     /* border: solid 5px salmon; */
 }
 .navbar-container nav {
@@ -44,7 +44,7 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 12px;
     position:relative;
     
 }
@@ -102,7 +102,41 @@ nav ul li a:hover::after {
 }
 .about-col-2 p {
     color: #ebe5e5;
+    font-size: 13px;
+    text-align: center;
 }
+.btnnn {
+    font-size: 12px;
+    background-color: #ecac21;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    padding: 5px 10px;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+   
+
+}
+/* .btnn {
+    width: auto;
+    height: auto;
+    margin-top: 50px;
+    left: 0;
+    display: inline-block;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #b5cbdf; 
+    color: #fff; 
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .about-col-2.btn:hover {
+    background-color: #23527c;
+  } */
+
 .tab-titles {
     display: flex;
     margin: 20px 0 40px;
@@ -139,6 +173,7 @@ nav ul li a:hover::after {
 }
 .tab-contents {
     color: #080808;
+    margin-bottom: 50px;
     /* display: none; */
 }
 .tab-contents.active-tab {
@@ -158,10 +193,17 @@ nav ul li a:hover::after {
     background-color: #333; /* darker background color */
   }
   
+  .services-list {
+    padding: 20px;
+  }
   .services-list > div {
-    flex-basis: 30%;
-    margin: 20px;
-    background-color: #fff;
+    flex-basis: 20%;
+    margin: 30px;
+    background-color: #585555;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* add this rule */
+    
     /* border: 1px solid #ddd; */
     border-radius: 10px;
     padding: 20px;
@@ -175,7 +217,7 @@ nav ul li a:hover::after {
   }
   
   .services-list > div h2 {
-    font-size: 24px;
+    font-size: 18px;
     margin-bottom: 10px;
   }
   
@@ -192,8 +234,9 @@ nav ul li a:hover::after {
   }
   
   .services-list > div i {
-    font-size: 40px;
-    margin-bottom: 10px;
+    font-size: 20px;
+    margin-right: 10px;
+    bottom:-20px;
   }
   
   .services-list > div p {
@@ -398,7 +441,7 @@ nav ul li a:hover::after {
   .copyright i {
     color: #ff004f;
   }
-
+  
   /* ----------------------------css for phone ------------------------- */
 nav .fas{
     display: none;
@@ -507,17 +550,11 @@ nav .fas{
         margin: 5px;
         font-size: 1em;
     }
-
     .layer a {
         font-size: 1.2em;
     }
 }
-
-    
-
-
-
-  #msg {
+#msg {
     color: #614752;
     margin-top: -20;
     display: block;

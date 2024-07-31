@@ -52,6 +52,9 @@
                 <li><span>App Development</span><br>Designing Web/App interfaces</li>
               </ul>
             </div>
+                <div class="btnn">
+                  <a href="#header" class="btnnn">Home</a>
+                </div>
           </div>
         </div>
       </div>
@@ -71,7 +74,7 @@
            <a href="#">Learn More</a>
           </div>
           <div>
-            <i class="fa-solid fa-camera-cctv"></i>
+            <i class="fa-solid fa-eye"></i>
             <h2>CCTV Instalation</h2>
             <p>As an experienced CCTV installation expert, I specialize in designing, installing, and maintaining advanced surveillance systems.</p>
             <a href="#">Learn More</a>
@@ -98,7 +101,7 @@
              <div class="layer">
               <h3>To-do-list APP</h3>
               <P>This App helps you key in your activities and remminds you when they are almost due</P>
-              <a href="#"><i class="fas fa-external-link-alt"></i></a>
+              <a href="https://github.com/AlexMbuthia12/to_do_app"><i class="fas fa-external-link-alt"></i></a>
              </div>
           </div>
 
@@ -134,8 +137,8 @@
          <p><i class="fas fa-phone"></i> +254721515739</p>
       </div>
       <div class="social-icons">
-        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100080439556971&mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://x.com/Alex22699752?t=Cwx19yvjD1p7V4cU0Nn1pQ&s=09" target="_blank"><i class="fab fa-twitter"></i></a>
         <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
         <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
       </div>
@@ -143,25 +146,48 @@
       <button class="download-cv" onclick="downloadCV()">Download CV</button>
     </div>
     <div class="contact-form">
-      <form name="submit-to-google-sheet">
-        <!-- <label for="name">Name:</label> -->
+      <form name="submit-to-google-sheet" id="web3forms" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="6f552e08-134d-4a27-a85e-817bb5317519">
         <input type="text" id="name" name="Name" placeholder="Your Name" required><br><br>
-        <!-- <label for="email">Email:</label> -->
         <input type="email" id="email" name="Email" placeholder="Your Email" required><br><br>
-        <!-- <label for="message">Message:</label> -->
         <textarea id="message" name="Message" rows="6" placeholder="Your Message"></textarea><br><br>
-        <button type="submit" class="submit-btn" >Send Message</button>
+        <!-- Honeypot Spam Protection -->
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+        <button type="submit" class="submit-btn">Send Message</button>
         <span id="msg"></span>
       </form>
       
     </div>
   </div>
   <div class="copyright">
-    <P>copyright @ Alex. Made with <i class="fas fa-heart"></i> by Alex Kagiri Mbuthia. </P>
+    <P>copyright @ Alex. Made with <i class="fas fa-heart"></i> by Alex Kagiri Mbuthia. <a href="#header">Home</a></P>
   </div>
 </div>
 <div>
   <script src="web.js"></script>
 </div>
+<script>
+  const form = document.getElementById('web3forms');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
+      });
+      const result = await response.json();
+      if (result.success) {
+        document.getElementById('msg').innerHTML = 'Message sent successfully!';
+        form.reset();
+      } else {
+        document.getElementById('msg').innerHTML = 'Error sending message!';
+      }
+    } catch (error) {
+      console.error(error);
+      document.getElementById('msg').innerHTML = 'Error sending message!';
+    }
+  });
+</script>
 </body>
 </html>
