@@ -103,9 +103,6 @@
               <P>This App helps you key in your activities and remminds you when they are almost due</P>
               <a href="https://github.com/AlexMbuthia12/to_do_app"><i class="fas fa-external-link-alt"></i></a>
              </div>
-             <div class="work-title">
-              <h2>To-do-list APP</h2>
-             </div>
           </div>
 
           <div class="work">
@@ -114,9 +111,6 @@
               <h3>Calculator APP</h3>
               <P>This is a JavaScript Calculator app</P>
               <a href="#"><i class="fas fa-external-link-alt"></i></a>
-             </div>
-          <div class="work-title">
-              <h2>Calculator APP</h2>
              </div>
          </div>
 
@@ -127,9 +121,6 @@
             <P>This App helps you track your inventory</P>
             <a href="#"><i class="fas fa-external-link-alt"></i></a>
            </div>
-          <div class="work-title">
-              <h2>Inventory Management App</h2>
-             </div>
          </div>
       </div>
    </div>
@@ -154,29 +145,20 @@
       <!-- <button class="download-cv" href="/images/Alex-Resume.pdf" download >Download CV</button> -->
       <button class="download-cv" onclick="downloadCV()">Download CV</button>
     </div>
-        
-    <!-- Contact form -->
-   <div class="contact-form">
-  <form id="web3form" action="https://api.web3forms.com/submit"         method="POST">
-    <input type="hidden" name="access_key" value="283e836e-e15f-4221-bb49-d0361f5b9b42">
-
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
-
-    <!-- Honeypot -->
-    <input type="checkbox" name="botcheck" class="hidden" style="display:none">
-
-    <button type="submit" class="submit-btn" id="submitBtn">
-      <span class="btn-text">Send Message</span>
-      <span class="spinner" style="display:none;"></span>
-    </button>
-  </form>
-</div>
-
-<!-- Toast Container -->
-<div id="toast-container"></div>
-
+    <div class="contact-form">
+      <form name="submit-to-google-sheet" id="web3forms" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="6f552e08-134d-4a27-a85e-817bb5317519">
+        <input type="text" id="name" name="Name" placeholder="Your Name" required><br><br>
+        <input type="email" id="email" name="Email" placeholder="Your Email" required><br><br>
+        <textarea id="message" name="Message" rows="6" placeholder="Your Message"></textarea><br><br>
+        <!-- Honeypot Spam Protection -->
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+        <button type="submit" class="submit-btn">Send Message</button>
+        <span id="msg"></span>
+      </form>
+      
+    </div>
+  </div>
   <div class="copyright">
     <P>copyright @ Alex. Made with <i class="fas fa-heart"></i> by Alex Kagiri Mbuthia. <a href="#header">Home</a></P>
   </div>
@@ -184,68 +166,28 @@
 <div>
   <script src="web.js"></script>
 </div>
-
-
 <script>
-  const form = document.getElementById('web3form');
-  const submitBtn = document.getElementById('submitBtn');
-  const spinner = submitBtn.querySelector('.spinner');
-  const btnText = submitBtn.querySelector('.btn-text');
-  const toastContainer = document.getElementById('toast-container');
-
-  // Function to create toast notifications
-  function showToast(message, type = "success") {
-    const toast = document.createElement("div");
-    toast.classList.add("toast", type);
-    toast.textContent = message;
-    toastContainer.appendChild(toast);
-
-    // Show + remove after delay
-    setTimeout(() => {
-      toast.classList.add("show");
-    }, 100);
-
-    setTimeout(() => {
-      toast.classList.remove("show");
-      setTimeout(() => toast.remove(), 500);
-    }, 4000);
-  }
-
+  const form = document.getElementById('web3forms');
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-
-    // Disable button and show spinner
-    submitBtn.disabled = true;
-    spinner.style.display = "inline-block";
-    btnText.textContent = "Sending...";
-
     const formData = new FormData(form);
-
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
       });
-
       const result = await response.json();
-
       if (result.success) {
-        showToast("✅ Message sent successfully!", "success");
+        document.getElementById('msg').innerHTML = 'Message sent successfully!';
         form.reset();
       } else {
-        showToast("❌ Error sending message. Try again.", "error");
+        document.getElementById('msg').innerHTML = 'Error sending message!';
       }
     } catch (error) {
       console.error(error);
-      showToast("⚠️ Network error. Please try again later.", "error");
+      document.getElementById('msg').innerHTML = 'Error sending message!';
     }
-
-    // Reset button
-    submitBtn.disabled = false;
-    spinner.style.display = "none";
-    btnText.textContent = "Send Message";
   });
 </script>
-
 </body>
 </html>

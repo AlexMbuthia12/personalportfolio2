@@ -270,36 +270,31 @@ nav ul li a:hover::after {
 }
 .work-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); /* Fixed: auto responsive */
-     gap: 40px;
-    /*grid-gap: 40px;*/
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    /* width: 300px;
+    height: 400px; */
+    grid-gap: 40px;
     margin-top: 20px;
     padding: 0px 30px;
 } 
 .work {
     border-radius: 10px;
+    /* width: 300px; */
     position: relative;
     overflow: hidden;
 }
 .work img{
     width: 100%;
-    height: auto; 
-    object-fit: cover;
-    /*border-radius: 9px;8*/
+    border-radius: 9px;
     display: block;
-    transition: transform 1s;
-    border-radius: 10px;
+    transition: transform 0.7s;
 }
-.work-title{
-    margin-top: 10px;
-    color: #d6b865;
-    text-align: center;
-}
+
 .layer{
     width: 100%;
     height: 0%;
     
-    background: linear-gradient(rgba(0,0,0,0.7), #ecac21);
+    background: linear-gradient(rgba(0,0,0,0.6), #ecac21);
     border-radius: 6px;
     position: absolute;
     left: 0;
@@ -309,13 +304,12 @@ nav ul li a:hover::after {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    /*padding: 0 40px;*/
+    padding: 0 40px;
     text-align: center;
     font-size: 14px;
-    color: #fff;
-    transition: height 1s;
+    color: #f1eaea;
+    transition: height 0.7s;
     /* transition: width 0.7s; */
-    right: 0;
 }
 .layer h3{
     font-weight: 600;
@@ -344,238 +338,120 @@ nav ul li a:hover::after {
 
  /* -------------------------------------contact me css------------------------------------------- */
 
- /* ========================= CONTACT SECTION ========================= */
-.parent-contact {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 20px;
-  padding: 40px;
-  background-color: #020202;
-  color: #ebe5e5;
-}
-
-/* Contact Info + Form equal width */
-.contact-info,
-.contact-form {
-  flex: 1 1 45%;
-  background-color: #111;
-  border-radius: 12px;
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-/* -------- Contact Info Section -------- */
-.contact-info h2 {
-  margin-bottom: 20px;
-  font-size: 22px;
-}
-
-.contact-info .contact p {
-  margin-bottom: 14px;
-  font-size: 14px;
-}
-
-.contact-info .contact i {
-  margin-right: 10px;
-  color: #ff3e9e;
-}
-
-.contact a {
-  text-decoration: none;
-  color: #ebe5e5;
-  transition: color 0.2s ease;
-}
-
-.contact a:hover {
-  color: #ff7ab4;
-}
-
-/* -------- Social Icons -------- */
-.social-icons {
-  margin: 20px 0;
-}
-
-.social-icons a {
-  display: inline-block;
-  margin-right: 10px;
-  font-size: 22px;
-  color: #999;
-  transition: color 0.3s ease;
-}
-
-.social-icons a:hover {
-  color: #ff7ab4;
-}
-
-/* -------- Download CV Button -------- */
-.download-cv {
-  background-color: #ff004f;
-  color: #fff;
-  border: none;
-  border-radius: 15px;
-  font-size: 13px;
-  width: 60%;
-  height: 40px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.download-cv:hover {
-  background-color: #ff7ab4;
-}
-
-/* ------------------------- CONTACT FORM ------------------------- */
-.contact-form {
-  justify-content: center;
-}
-
-.contact-form form {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-form input,
-form textarea {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  outline: none;
-  border-radius: 8px;
-  background-color: #d9d9d9;
-  color: #070707;
-  font-size: 13px;
-  margin-bottom: 15px;
-}
-
-.contact-form textarea {
-  height: 100px;
-  resize: none;
-}
-
-/* Submit Button */
-.submit-btn {
-  background-color: #ff004f;
-  color: #fff;
-  border: none;
-  border-radius: 15px;
-  font-size: 13px;
-  width: 120px;
-  height: 35px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  align-self: center;
-}
-
-.submit-btn:hover {
-  background-color: #ff7ab4;
-}
-
-/* Spinner inside submit button */
-.spinner {
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-top: 2px solid white;
-  border-radius: 50%;
-  width: 14px;
-  height: 14px;
-  margin-left: 8px;
-  animation: spin 0.8s linear infinite;
-  vertical-align: middle;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* ===== Toast Notifications ===== */
-#toast-container {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.toast {
-  opacity: 0;
-  transform: translateX(100%);
-  padding: 12px 18px;
-  border-radius: 8px;
-  color: #fff;
-  font-size: 14px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  transition: all 0.5s ease;
-}
-
-.toast.show {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* Toast types */
-.toast.success {
-  background-color: #00c853; /* green */
-}
-
-.toast.error {
-  background-color: #ff1744; /* red */
-}
-
-
-/* ------------------------- COPYRIGHT ------------------------- */
-.copyright {
-  width: 100%;
-  text-align: center;
-  background-color: #262626;
-  padding: 7px 0;
-  font-size: 12px;
-  font-weight: 400;
-  margin-top: 20px;
-}
-
-.copyright i {
-  color: #ff004f;
-}
-
-/* ========================= RESPONSIVE DESIGN ========================= */
-@media (max-width: 768px) {
-  .parent-contact {
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
+ .parent-contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    color: #ebe5e5;
+    background-color: #020202;
   }
-
-  .contact-info,
+  .contact-info {
+    flex-basis: 35%;
+    padding: 0 60px;
+  }
+  .contact-info h2 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .contact-info .contact p {
+    margin-bottom: 22px;
+    font-size: 12px;
+    
+  }
+  .contact-info .contact i {
+    margin-right: 10px;
+    color: #ff3e9e;
+  }
+  .contact a {
+    text-decoration: none;
+  }
+  .social-icons {
+    margin-bottom: 20px;
+  }
+  .social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 24px;
+    color: #666;
+    transition: color 0.2s ease;
+  }
+  .social-icons a:hover {
+    color: #999;
+  }
+  .download-cv {
+    background-color: #ff004f;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    /* padding: 10px 20px; */
+    font-size: 11px;
+    width: 50%;
+    height: 10%;
+    cursor: pointer;
+  }
+  .download-cv:hover {
+    background-color: #ff7ab4;
+  }
+  /* -------------------------Contact Form-------------------------------- */
   .contact-form {
-    flex: 1 1 100%;
+    flex-basis: 60%;
+    width: 100%;
+    padding: 35px 0;
+    /* background-color: #df356b; */
+    display: flex;
+    justify-content: center;
+  }
+  
+  .contact-form form {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* border: 1px solid #ff004f; */
+    /* align-items: center; */
+  }
+ form input, form textarea {
+    width: 100%;
+    padding: 5px;
+    border: 0;
+    outline: none;
+    border-radius: 4px;
+    /* border: 1px solid #11b848; */
+    background-color: #999;
+    color: #070707;
+    font-size: 9px;
+  }
+  .contact-form textarea {
+    height: 60px;
+  }
+  
+  .submit-btn {
+    background-color: #ff004f;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    font-size: 10px;
+    width: 90px;
+    height: 30px;
+    cursor: pointer;
+  }
+  
+  .submit-btn:hover {
+    background-color: #ff7ab4;
+  }
+  .copyright {
     width: 100%;
     text-align: center;
-    padding: 25px 15px;
+    background-color: #262626;
+    padding: 7px 0;
+    font-size: 10px;
+    font-weight: 400;
+    margin
+  }  
+  .copyright i {
+    color: #ff004f;
   }
-
-  .contact-form form {
-    width: 90%;
-  }
-
-  .download-cv {
-    width: 80%;
-  }
-
-  form input,
-  form textarea {
-    font-size: 12px;
-  }
-}
-
+  
   /* ----------------------------css for phone ------------------------- */
 nav .fas{
     display: none;
@@ -584,11 +460,10 @@ nav .fas{
     #header{
         background-image: url(/images/tabPic.jpeg);    
     }
-    .header-text {
-    margin-top: 20%;   /* smaller, proportional spacing */
-    font-size: 16px;
-    text-align: center; /* center text if needed */
-}
+    .header-text{
+        margin-top: 100%;
+        font-size: 16px;
+    }
     .header-text h1 {
         font-size: 30px;
     }
