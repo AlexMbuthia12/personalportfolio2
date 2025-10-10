@@ -589,7 +589,7 @@ nav .fas{
 }
 @media only screen and (max-width:  600px) {
     #header{
-        background-image: url(/images/tabPic.jpeg);    
+        background-image: url(images/tabPic.jpeg);    
     }
     .header-text {
     margin-top: 20%;   /* smaller, proportional spacing */
