@@ -72,7 +72,7 @@ nav ul li a:hover::after {
 }
 .header-text {
     margin: 150px 12%;
-    color: #997474;
+    color: #7ccdcf;
 }
 .header-text h1 span {
     color: #ff004f;
@@ -265,80 +265,89 @@ nav ul li a:hover::after {
 /*------------------ Portfolio ------------------*/
 
 #portfolio {
-    padding: 40px 0;
-    background-color: #080808;
+  padding: 40px 0;
+  background-color: #080808;
 }
+
 .work-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); /* Fixed: auto responsive */
-     gap: 40px;
-    margin-top: 20px;
-    padding: 0px 30px;
-} 
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 40px;
+  margin-top: 20px;
+  padding: 0 30px;
+}
+
 .work {
-    border-radius: 10px;
-    position: relative;
-    overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  background: #111; /* fallback background in case image fails */
 }
-.work img{
-    width: 100%;
-    height: auto; 
-    object-fit: cover;
-    display: block;
-    transition: transform 1s;
-    border-radius: 10px;
+
+.work img {
+  width: 100%;
+  height: 300px; /* fixed height for consistent card layout */
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s ease;
+  border-radius: 10px;
 }
-.work-title{
-    margin-top: 10px;
-    color: #d6b865;
-    text-align: center;
+
+.work-title {
+  margin-top: 10px;
+  color: #d6b865;
+  text-align: center;
 }
-.layer{
-    width: 100%;
-    height: 0%;
-    
-    background: linear-gradient(rgba(0,0,0,0.7), #ecac21);
-    border-radius: 6px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    /*padding: 0 40px;*/
-    text-align: center;
-    font-size: 14px;
-    color: #fff;
-    transition: height 1s;
-    /* transition: width 0.7s; */
-    right: 0;
+
+.layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; /* ensures it covers the image */
+  background: linear-gradient(rgba(0, 0, 0, 0.7), #ecac21);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  opacity: 0; /* hidden by default */
+  transition: opacity 0.7s ease;
 }
-.layer h3{
-    font-weight: 600;
-    margin-bottom: 20px;
+
+.layer h3 {
+  font-weight: 600;
+  margin-bottom: 20px;
 }
-.layer a{
-    margin-top: 15px;
-    text-decoration: none;
-    line-height: 40px;
-    font-size: 18px;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    background-color: #ebe5e5;
-    color: #262626;
-    align-items: center;
+
+.layer a {
+  margin-top: 15px;
+  text-decoration: none;
+  line-height: 40px;
+  font-size: 18px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: #ebe5e5;
+  color: #262626;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-/* <-- added transition to work 0.7s transform / changed layer height to 0  --> */
-.work:hover img{
-    transform: scale(1.2);
+
+/* Hover effects */
+.work:hover img {
+  transform: scale(1.2);
 }
-          /* added hover to work for height transition in layer */
+
 .work:hover .layer {
-    height: 100%;
+  opacity: 1;
 }
+
 
  /* -------------------------------------contact me css------------------------------------------- */
 
