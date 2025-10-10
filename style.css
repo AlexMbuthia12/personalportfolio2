@@ -272,7 +272,6 @@ nav ul li a:hover::after {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); /* Fixed: auto responsive */
      gap: 40px;
-    /*grid-gap: 40px;*/
     margin-top: 20px;
     padding: 0px 30px;
 } 
@@ -285,7 +284,6 @@ nav ul li a:hover::after {
     width: 100%;
     height: auto; 
     object-fit: cover;
-    /*border-radius: 9px;8*/
     display: block;
     transition: transform 1s;
     border-radius: 10px;
