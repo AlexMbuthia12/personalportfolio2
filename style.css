@@ -21,7 +21,7 @@ HTML {
 /* Mobile background override */
 @media (max-width: 768px) {
   #header {
-    background-image: url("./images/tabPic.jpeg"); /* Fixed: correct mobile background */
+    background-image: url("../images/tabPic.jpeg"); /* Fixed: correct mobile background */
     background-size: cover;
     background-position: center;
   }
